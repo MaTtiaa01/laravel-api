@@ -15,6 +15,12 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $types = ['team', 'self-made'];
+
+        foreach ($types as $type) {
+            $new_type = new Type();
+            $new_type->name = $type;
+            $new_type->save();
+        }
     }
 }

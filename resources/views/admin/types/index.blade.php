@@ -22,7 +22,7 @@
 
                 <div class="type">
                     <strong>Project Type:</strong>
-                    {{$types[$project->type_id]->name}}
+                    {{$project->type}}
                 </div>
             </div>
         </div>

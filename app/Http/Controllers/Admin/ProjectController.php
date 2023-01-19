@@ -69,6 +69,8 @@ class ProjectController extends Controller
 
 
 
+
+
         //return a view
         return to_route('admin.projects.index')->with('message', "$new_project->title added successfully");
     }
