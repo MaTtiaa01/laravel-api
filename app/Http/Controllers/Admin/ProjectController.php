@@ -56,7 +56,7 @@ class ProjectController extends Controller
 
         //check if there is a file as cover_img
         if ($request->hasFile('cover_img')) {
-            $cover_img = Storage::put('uploads', $val_data['cover_img']);
+            $cover_img = Storage::disk('public')->put('uploads', $val_data['cover_img']);
 
             $val_data['cover_img'] = $cover_img;
         }
