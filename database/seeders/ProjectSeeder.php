@@ -19,7 +19,7 @@ class ProjectSeeder extends Seeder
         for ($i = 0; $i < 20; $i++) {
             $new_project = new Project();
             $new_project->title = $faker->sentence(3);
-            $new_project->cover_img = 'default.png';
+            $new_project->cover_img = '/uploads/default.png';
             $new_project->description = $faker->paragraph();
             $new_project->language = $faker->word();
             $new_project->save();
