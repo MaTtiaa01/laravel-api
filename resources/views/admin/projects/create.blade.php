@@ -65,12 +65,6 @@
                 <small id="helpId" class="text-muted">insert a project description</small>
             </div>
 
-            <!-- write project language -->
-            <div class="mb-3">
-                <label for="language" class="form-label">language</label>
-                <input type="text" name="language" id="language" class="form-control @error('language') is-invalid @enderror" placeholder="insert a language url" aria-describedby="helpId" value="{{old('language')}}">
-                <small id="helpId" class="text-muted">insert a project language </small>
-            </div>
 
             <button type="submit" class="btn btn-primary">Add</button>
         </form>
