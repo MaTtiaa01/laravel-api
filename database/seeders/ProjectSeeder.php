@@ -21,7 +21,6 @@ class ProjectSeeder extends Seeder
             $new_project->title = $faker->sentence(3);
             $new_project->cover_img = '/uploads/default.png';
             $new_project->description = $faker->paragraph();
-            $new_project->language = $faker->word();
             $new_project->save();
         }
     }

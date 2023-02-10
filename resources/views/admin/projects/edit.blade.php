@@ -50,7 +50,7 @@
             <div class="mb-3">
                 <label for="technologies" class="form-label">Technologies</label>
                 <select multiple class="form-select form-select-md" name="technologies[]" id="technologies">
-                    <option disabled>Select one</option>
+                    <option disabled>Select one or more technologies</option>
 
                     @forelse($technologies as $technology)
 
