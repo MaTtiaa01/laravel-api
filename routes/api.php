@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/project', [ProjectController::class, 'index']);
+Route::get('/projects', [ProjectController::class, 'index']);
 Route::get('/projects/{project:id}', [ProjectController::class, 'show']);
 
 //route for mail inbox
