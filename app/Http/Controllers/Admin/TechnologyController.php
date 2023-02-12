@@ -16,7 +16,8 @@ class TechnologyController extends Controller
      */
     public function index()
     {
-        //
+        $technologies = Technology::all();
+        return view('admin.technologies.index', compact('technologies'));
     }
 
     /**
@@ -26,7 +27,6 @@ class TechnologyController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -37,7 +37,15 @@ class TechnologyController extends Controller
      */
     public function store(StoreTechnologyRequest $request)
     {
-        //
+        //dd($request);
+        $val_data = $request->validated();
+
+        //create slug
+        $technology_slug = Technology::createSlug($val_data['name']);
+        $val_data['slug'] = $technology_slug;
+
+        $new_technology = Technology::create($val_data);
+        return to_route('admin.technologies.index')->with('message',  "$new_technology->name has been added successfully");
     }
 
     /**
@@ -71,7 +79,15 @@ class TechnologyController extends Controller
      */
     public function update(UpdateTechnologyRequest $request, Technology $technology)
     {
-        //
+        //dd($request);
+        $val_data = $request->validated();
+
+        //create slug
+        $technology_slug = Technology::createSlug($val_data['name']);
+        $val_data['slug'] = $technology_slug;
+
+        $technology->update($val_data);
+        return to_route('admin.technologies.index')->with('message', "$technology->name has been updated successfully");
     }
 
     /**
@@ -82,6 +98,8 @@ class TechnologyController extends Controller
      */
     public function destroy(Technology $technology)
     {
-        //
+        $technology->delete();
+
+        return to_route('admin.technologies.index')->with('message', "$technology->name deleted successfully");
     }
 }
