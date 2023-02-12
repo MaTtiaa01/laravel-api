@@ -19,11 +19,12 @@
                     <strong>Project name:</strong>
                     {{$project->title}}
                 </div>
-
+                @if($project->type)
                 <div class="type">
                     <strong>Project Type:</strong>
                     {{$project->type->name}}
                 </div>
+                @endif
             </div>
         </div>
         @empty
