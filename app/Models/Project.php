@@ -12,7 +12,7 @@ use App\Models\Type;
 class Project extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description', 'language', 'cover_img', 'type_id'];
+    protected $fillable = ['title', 'description', 'language', 'cover_img', 'type_id', 'source_code'];
 
     public function type(): BelongsTo
     {
