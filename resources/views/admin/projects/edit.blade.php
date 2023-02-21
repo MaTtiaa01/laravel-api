@@ -73,6 +73,12 @@
                 <small id="helpId" class="text-muted">insert a project description</small>
             </div>
 
+            <!-- write a source-code -->
+            <div class="mb-3">
+                <label for="source_code" class="form-label">Source code</label>
+                <input type="text" name="source_code" id="source_code" class="form-control @error('source_code') is-invalid @enderror" placeholder="insert a source code" aria-describedby="helpId" value="{{old('source_code')}}">
+                <small id="helpId" class="text-muted">insert a Source Code</small>
+            </div>
 
             <button type="submit" class="btn btn-primary">Edit</button>
         </form>
