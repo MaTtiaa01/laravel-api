@@ -128,7 +128,7 @@ class ProjectController extends Controller
         $project->update($val_data);
 
         if ($request->has('technologies')) {
-            $project->technologies()->sync($project['technologies']);
+            $project->technologies()->sync($val_data['technologies']);
         } else {
             $project->technologies()->sync([]);
         }
