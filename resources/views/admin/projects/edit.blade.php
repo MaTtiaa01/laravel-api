@@ -76,7 +76,7 @@
             <!-- write a source_code -->
             <div class="mb-3">
                 <label for="source_code" class="form-label">Source code</label>
-                <input type="text" name="source_code" id="source_code" class="form-control @error('source_code') is-invalid @enderror" placeholder="insert a source code" aria-describedby="helpId" value="{{old('source_code')}}">
+                <input type="text" name="source_code" id="source_code" class="form-control @error('source_code') is-invalid @enderror" placeholder="insert a source code" aria-describedby="helpId" value="{{old('source_code',$project)}}">
                 <small id="helpId" class="text-muted">insert a Source Code</small>
             </div>
 
