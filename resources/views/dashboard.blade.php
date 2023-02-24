@@ -16,8 +16,7 @@
 
                     {{ __('You are logged in!') }}
 
-                    <a class="btn btn-primary btn-sm d-block mt-3" href="{{route('admin.projects.index')}}">View Projects 2</a>
-                    <a class="btn btn-primary btn-sm d-block mt-3" href="{{route('admin.types.index')}}">View Projects by type</a>
+                    <a class="btn btn-primary btn-sm d-block mt-3" href="{{route('admin.projects.index')}}">View Projects </a>
 
                 </div>
             </div>
