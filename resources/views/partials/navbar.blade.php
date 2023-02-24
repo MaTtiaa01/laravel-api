@@ -39,6 +39,8 @@
                             {{ __('Logout') }}
                         </a>
                         <a class="dropdown-item" href="{{route('admin.technologies.index')}}">Technologies</a>
+                        <a class="dropdown-item" href="{{route('admin.types.index')}}">Types</a>
+
 
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

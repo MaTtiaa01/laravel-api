@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Http\Requests\StoreTypeRequest;
+use App\Http\Requests\UpdateTypeRequest;
 
 class TypeController extends Controller
 {
@@ -40,9 +42,13 @@ class TypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTypeRequest $request)
     {
-        //
+        //dd($request);
+        $val_data = $request->validated();
+
+        $new_type = Type::create($val_data);
+        return to_route('admin.types.index')->with('message',  "$new_type->name has been added successfully");
     }
 
     /**
@@ -74,9 +80,13 @@ class TypeController extends Controller
      * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Type $type)
+    public function update(UpdateTypeRequest $request, Type $type)
     {
-        //
+        //dd($request);
+        $val_data = $request->validated();
+
+        $type->update($val_data);
+        return to_route('admin.types.index')->with('message', "$type->name has been updated successfully");
     }
 
     /**
@@ -87,6 +97,8 @@ class TypeController extends Controller
      */
     public function destroy(Type $type)
     {
-        //
+        $type->delete();
+
+        return to_route('admin.types.index')->with('message', "$type->name deleted successfully");
     }
 }
