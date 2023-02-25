@@ -59,9 +59,16 @@
 
 
             <!-- write a description -->
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="description" class="form-label">description</label>
                 <input type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="insert a description" aria-describedby="helpId" value="{{old('description')}}">
+                <small id="helpId" class="text-muted">insert a project description</small>
+            </div> -->
+
+            <!-- write a description -->
+            <div class="mb-3">
+                <label for="description" class="form-label">description</label>
+                <textarea name="description" id="description" cols="30" rows="10" class="form-control @error('description') is-invalid @enderror" placeholder="insert a description">{{old('description')}} </textarea>
                 <small id="helpId" class="text-muted">insert a project description</small>
             </div>
 
